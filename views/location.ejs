@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Location</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .form-section, .results-section {
+            background-color: #ffffff;
+            padding: 40px 20px; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+        .form-section:hover, .results-section:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .form-section h1, .results-section h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-section label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        .form-section input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-section button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-section button:hover {
+            background-color: #45a049;
+        }
+        .results-section h1 {
+            font-size: 20px;
+            margin-top: 0;
+            text-align: center;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .hospital-card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            flex: 1 1 calc(50% - 20px);
+            box-sizing: border-box;
+        }
+        .hospital-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .hospital-card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .hospital-card p {
+            margin: 5px 0;
+        }
+        .hospital-card a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .hospital-card a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .container1{
+            padding-left: 160px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body></br></br>
+    <div class="container">
+        <section class="form-section">
+            <center><h1 style="color: #4CAF50;">Hospital Location Finder</h1></center>
+            <form action="/location" method="post">
+                <label for="specialist">Specialist:</label>
+                <input type="text" name="specialist" id="specialist" required value="<%= locals.specialist || '' %>">
+                <label for="location">Location:</label>
+                <input type="text" name="location" id="location" required value="<%= locals.location || '' %>">
+                <center><button type="submit">Find Hospitals</button></center>
+            </form>
+        </section>
+    </div>
+    <div class="container1">
+        <% if (locals.location) { %>
+            <div class="cards-container">
+                <%- include('hospital.ejs') %>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

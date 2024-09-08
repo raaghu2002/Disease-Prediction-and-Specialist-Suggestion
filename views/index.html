@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Location Finder</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container, .container1 {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .form-section, .results-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .form-section h1, .results-section h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-section label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        .form-section input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-section button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-section button:hover {
+            background-color: #0056b3;
+        }
+        .results-section h1 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .hospital-card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            flex: 1 1 calc(50% - 20px);
+            box-sizing: border-box;
+        }
+        .hospital-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .hospital-card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .hospital-card p {
+            margin: 5px 0;
+        }
+        .hospital-card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .hospital-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="form-section">
+            <center><h1>Hospital Location Finder</h1></center>
+            <form action="/location" method="post">
+                <label for="specialist">Specialist:</label>
+                <input type="text" name="specialist" id="specialist" required value="<%= locals.specialist || '' %>">
+                <label for="location">Location:</label>
+                <input type="text" name="location" id="location" required value="<%= locals.location || '' %>">
+                <center><button type="submit">Find Hospitals</button></center>
+            </form>
+        </section>
+    </div>
+    <div class="container1">
+        <section class="results-section">
+            <h1>Top 5 Hospitals for Physicians in Mysore</h1>
+            <div class="cards-container">
+                <div class="hospital-card">
+                    <h2>Apollo BGS Hospitals</h2>
+                    <p>Contact: 0821 - 2540300</p>
+                    <p>Address: Siddhartha Medical College Campus, Lalitha Mahal Road, Kuvempunagar</p>
+                    <p>Website: <a href="https://www.apollobgshospitals.com/">https://www.apollobgshospitals.com/</a></p>
+                    <p>Specialist Physician: Dr. K. Srinivasan</p>
+                </div>
+
+                <div class="hospital-card">
+                    <h2>Columbia Asia Hospital - Mysore</h2>
+                    <p>Contact: 0821 - 2452452</p>
+                    <p>Address: No. 1695, JSS 5th Stage, Gokulam 3rd Stage, JP Nagar</p>
+                    <p>Website: <a href="https://www.columbiaasia.com/india/mysore">https://www.columbiaasia.com/india/mysore</a></p>
+                    <p>Specialist Physician: Dr. Prashant Lokere</p>
+                </div>
+
+                <div class="hospital-card">
+                    <h2>Max Super Speciality Hospital, Mysore</h2>
+                    <p>Contact: 0821 - 4296400</p>
+                    <p>Address: JSS Layout, JP Nagar 4th Phase, Kuvempunagar</p>
+                    <p>Website: <a href="https://www.maxhealthcare.in/en/hospital-mysore">https://www.maxhealthcare.in/en/hospital-mysore</a></p>
+                    <p>Specialist Physician: Dr. S. Rahul</p>
+                </div>
+
+                <div class="hospital-card">
+                    <h2>Fortis Hospital, Mysore</h2>
+                    <p>Contact: 0821 - 2978300</p>
+                    <p>Address: No. 86, Hinkal Road, opposite Vinayakanagar Railway Crossing</p>
+                    <p>Website: <a href="https://www.fortishealthcare.com/hospital/fortis-hospital-mysore">https://www.fortishealthcare.com/hospital/fortis-hospital-mysore</a></p>
+                    <p>Specialist Physician: Dr. Suresh Chandrashekhar</p>
+                </div>
+
+                <div class="hospital-card">
+                    <h2>Narayana Multispeciality Hospital, Mysore</h2>
+                    <p>Contact: 0821 - 4018888</p>
+                    <p>Address: No. 209/210, Bannur Main Road, Vinoba Road</p>
+                    <p>Website: <a href="https://www.narayanahealth.org/hospitals/narayana-multispeciality-hospital-mysore">https://www.narayanahealth.org/hospitals/narayana-multispeciality-hospital-mysore</a></p>
+                    <p>Specialist Physician: Dr. Manoj Kumar Hiremath</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

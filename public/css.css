@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li:hover {
+    text-decoration: underline; /* Hover effect for <li> elements */
+}
+
+header nav ul li a:hover {
+    color: #ddd; /* Hover effect for <a> tags */
+}
+
+main {
+    display: flex;
+    max-width: 1300px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+aside {
+    width: 20%;
+    padding-right: 0rem;
+    margin-right: 1rem;
+    border-right: 3px solid #ddd;
+}
+
+aside h3 {
+    color: #333;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+}
+
+.card-list li {
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Ensure content doesn't overflow the card */
+}
+
+.card-list li:hover {
+    transform: scale(1.05); /* Card hover effect */
+}
+
+.card-list li img {
+    width: 100%;
+    height: auto;
+}
+
+.card-list li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #2f312f;
+    font-weight: bold;
+}
+
+.card-list li a:hover {
+    color: #4CAF50; 
+}
+
+h3 {
+    color: #4CAF50;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 1rem;
+    flex: 1 1 45%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Ensure content doesn't overflow the card */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Card hover effect */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-link {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.card-link:hover {
+    background-color: #45a049; /* Hover effect for card links */
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+    margin-top: 2rem;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    color: #ddd; /* Hover effect for footer links */
+}

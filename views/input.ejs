@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Prediction</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 style="color: white;">Welcome to Our Medical Consultant</h1>
+            
+        </div>
+    </header>
+    
+    <aside onclick="window.location='/detailed';">
+        
+    </aside>
+    <main>
+        <div class="container">
+            <h1>Enter Your Symptoms</h1>
+            <form action="/predict" method="post">
+                <div class="form-container">
+                    <% for(let symptom of symptoms) { %>
+                        <div class="form-group">
+                            <label for="<%= symptom %>"><%= symptom.replace(/_/g, ' ') %>:</label>
+                            <select name="<%= symptom %>" id="<%= symptom %>" class="form-control">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    <% } %>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Medical Consultant. All rights reserved.</p>
+    </footer>
+</body>
+</html>
